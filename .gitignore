@@ -1,0 +1,12 @@
+# Ignore Python cache
+__pycache__/
+
+# Ignore environment variables file
+.env
+
+# Ignore configuration and credentials files
+config.txt
+crendencias_lati_isaias.pem
+
+# Ignore virtual environment folder
+.venv

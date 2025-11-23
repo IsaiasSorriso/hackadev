@@ -1,0 +1,191 @@
+ body {
+      font-family: 'Poppins', sans-serif;
+       background-image: url("background.png");
+        background-size: cover; /* cobre toda a tela */
+        background-position: center; /* centraliza a imagem */
+        background-repeat: no-repeat; /* evita repetições */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* ===== Sidebar ===== */
+    .sidebar {
+      width: 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0.5rem;
+      box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .sidebar h3 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .model-btn {
+      width: 100%;
+      margin: 5px 0;
+      padding: 6px 0;
+      background: #f0f0f0;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: 0.2s ease;
+    }
+
+    .model-btn:hover {
+    }
+
+    /* ===== Chat area ===== */
+    .chat-wrapper {
+      flex: 1;
+      border-radius: 1rem 0 0 1rem;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem 2rem;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Oracle_logo.svg/512px-Oracle_logo.svg.png');
+      background-repeat: no-repeat;
+      background-position: 95% 4%;
+      background-size: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chat-wrapper::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 40%;
+      height: 60%;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/3/31/Colorful_abstract_shapes.svg');
+      background-size: cover;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .chat-header {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 1rem;
+    }
+
+    .chat-messages {
+      flex: 1;
+      background: #fff;
+      padding: 1rem;
+      overflow-y: auto;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      scrollbar-width: thin;
+    }
+
+    .message {
+      padding: 12px 18px;
+      border-radius: 10px;
+      max-width: 60%;
+      word-wrap: break-word;
+      position: relative;
+    }
+
+    .user-message {
+      align-self: flex-end;
+      background: #d9d9d9;
+    }
+
+    .ai-message {
+      align-self: flex-start;
+      background: #d9d9d9;
+    }
+
+    .ai-message small {
+      display: block;
+      font-size: 0.7rem;
+      color: #555;
+      text-align: right;
+      margin-top: 4px;
+    }
+
+    .input-container {
+      width: 90%;
+      display: flex;
+      align-items: center;
+      border-radius: 20px;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+
+    #user-input {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      width: 50%;
+      border-radius: 10px;
+      font-size: 1rem;
+      border: #bbb 1px solid;
+      outline: none;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      background-color: #fff;
+      font-size: 1.9rem;
+      color: #2196F3;
+      border: #bbb 1px solid;
+      transition: 0.3s;
+      border-radius: 30%;
+    }
+
+    button:hover {
+      color: #1976D2;
+    }
+
+    #mic-button {
+      font-size: 1.2rem;
+      border-radius: 30%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      transition: all 0.3s ease;
+    }
+
+    #mic-button.listening {
+      color: white;
+    }
+
+    .loading {
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    /* Scrollbar */
+    .chat-messages::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .chat-messages::-webkit-scrollbar-thumb {
+      background: #bbb;
+      border-radius: 3px;
+    }
+
+    #mic-button.listening {
+      background-color: #ff4d4d;
+      color: white;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.6); }
+      70% { box-shadow: 0 0 0 10px rgba(255, 77, 77, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+    }
